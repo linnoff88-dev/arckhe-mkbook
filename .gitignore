@@ -1,0 +1,28 @@
+# mkbook artifacts (não comitar livros gerados)
+build/
+chapters/*.md
+!chapters/.gitkeep
+stories.md
+bible.md
+outline.md
+ideas.md
+launch/
+publishing/
+monetization/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Backups dos scripts
+*.bak
+
+# Claude Code internals (mas mantemos a skill ebook-writer)
+.claude/claudex/
+.claude/projects/
+.claude/sessions/
+.claude/todos/

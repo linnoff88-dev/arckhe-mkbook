@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.2 — Encontrando sua ideia bestseller | mkbook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; } html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; } html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); } html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; } html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); } html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(239,68,68,0.08); } html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .text-red-400 { color: #b91c1c; } html:not(.dark) .text-blue-400 { color: #2563eb; }
+    .dark .border-dark-600 { border-color: #374151; } .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+      <div class="flex items-center space-x-4">
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">📚</span><span class="font-bold text-lg hidden sm:inline">mkbook</span></a>
+        <span class="text-neutral-600">|</span>
+        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+      </div>
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+        <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Escrita</span></a>
+        <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Publicação</span></a>
+        <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Lançamento</span></a>
+        <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+        </button>
+      </div>
+    </div></div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span><a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span><span class="text-emerald-400">Módulo 1.2</span></div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">💡 Encontrando sua ideia bestseller</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Prompt 1 do framework, mas em pipeline: inventário de expertise → 5 ideias geradas → 5 filtros → análise competitiva → validação 24h → decisão final.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🔍 Inventário de expertise</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Antes de pedir ideias pra IA, você precisa <strong class="text-emerald-400">mapear sua expertise real</strong>. "Anos de carreira" não basta. O que conta: combinações raras de skills, dores vividas, perguntas que você responde sem pensar.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🧬</span> 4 perguntas que revelam expertise vendável</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">1.</span><span><strong>O que pessoas te perguntam toda semana?</strong> Recorrência = dor de mercado.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">2.</span><span><strong>O que você fez 1000 vezes que outros fazem 10?</strong> Velocidade = expertise.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">3.</span><span><strong>Que erros você cometeu antes dos outros?</strong> Cicatrizes ensinam mais que vitórias.</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">4.</span><span><strong>Quais 2-3 mundos você atravessa que poucos atravessam?</strong> Cruzamento = talent stack.</span></li>
+        </ul>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Talent stack &gt; talento único</h3>
+        <p class="text-neutral-300">Você não precisa ser o melhor do mundo em UMA coisa. Precisa estar no top 25% em 3 coisas que poucos combinam. "Top 25% em programação + design + escrita" é mais raro (e vendável) que "top 1% em só uma".</p>
+      </div>
+    </section>
+
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🎯 Rodando o Prompt 1</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Hora de invocar a skill. O resultado <strong class="text-emerald-400">não vai pro chat</strong> — vai pra arquivo <code class="text-primary">ideas.md</code> que vira input do próximo passo.</p>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">⌨️</span> Comando exato</h3>
+        <div class="font-mono text-sm bg-dark-900/70 p-4 rounded border border-dark-600 text-neutral-300 overflow-x-auto">
+<span class="text-neutral-500">$</span> claude<br/>
+<span class="text-emerald-400">&gt;</span> /ebook-writer<br/>
+<span class="text-emerald-400">&gt;</span> Use a skill ebook-writer pra gerar 5 ideias de livro.<br/>
+<span class="text-emerald-400">&gt;</span> Minha expertise: [cole inventário do Tópico 1]<br/>
+<span class="text-emerald-400">&gt;</span> Salve em ideas.md
+        </div>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> O que cada ideia precisa ter</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li><strong>Título + subtítulo</strong> — clicáveis na prateleira</li>
+          <li><strong>Avatar</strong> — quem desperadamente precisa disso</li>
+          <li><strong>Promessa de transformação</strong> — antes/depois do leitor</li>
+          <li><strong>Análise competitiva</strong> — 3-5 livros similares e seu gap</li>
+          <li><strong>Potencial de receita</strong> — vendas + back-end</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🏆 5 filtros pra cortar 4 ideias</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A IA gera 5 ideias plausíveis. Sua decisão é matar 4. Use os 5 filtros abaixo — qualquer ideia que falha em 2+ está fora.</p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Dor urgente</h4><p class="text-neutral-300 text-sm">O avatar perde sono? Está procurando solução AGORA? Ideias sobre "melhoria opcional" não vendem.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Mercado quente</h4><p class="text-neutral-300 text-sm">Categoria tem 50+ títulos vendidos por mês? Sem demanda comprovada, você vira pioneiro morto.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Sua autoridade clara</h4><p class="text-neutral-300 text-sm">Você pode escrever 12 capítulos sobre isso sem pesquisar tudo do zero? Sem isso, dá blog post, não livro.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Modelo de back-end</h4><p class="text-neutral-300 text-sm">Tem produto/serviço atrás que esse livro vai puxar? Sem isso, você ganha só royalty.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">5</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Energia pra 30 dias</h4><p class="text-neutral-300 text-sm">Você ainda gostaria do tema no dia 28? Tópico que te entedia em 1 semana morre antes do meio.</p></div></div>
+      </div>
+    </section>
+
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">📊 Análise competitiva real</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Onde nasce diferenciação: nas <strong class="text-emerald-400">reviews 1-3 estrelas</strong> dos livros concorrentes. Leitores frustrados te dizem exatamente o que falta no mercado.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Fazer</h4><ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Buscar 3-5 livros TOP da sua categoria</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ler 20 reviews 1-3 estrelas de cada um</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Anotar reclamações recorrentes ("muito raso", "sem exemplos", "datado")</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Posicionar seu livro pra resolver o gap mais citado</span></li>
+        </ul></div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Evitar</h4><ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ler só as 5-estrelas (não revela gap)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Achar "vou fazer melhor que TODOS" (ego, não estratégia)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignorar competição achando que "meu nicho é único"</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Copiar título/capa parecido (Amazon penaliza)</span></li>
+        </ul></div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Positioning by negation</h3>
+        <p class="text-neutral-300">Frase poderosa: "Diferente de [livro X que é teórico], o meu entrega [exemplo prático/sistema/template]". Esse é o ângulo que vende em descrição + posts.</p>
+      </div>
+    </section>
+
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🪙 Validação em 24 horas</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Antes de escrever 1 linha, prove que <strong class="text-emerald-400">alguém compraria</strong>. 3 testes que custam quase nada e te poupam 30 dias.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🧪</span> 3 testes de demanda</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li><strong>Teste 1 — Pesquisa direta:</strong> post numa comunidade do nicho: "Se eu escrevesse um livro sobre [X promessa], você compraria por R$ 49?". 10+ "sim" = sinal forte.</li>
+          <li><strong>Teste 2 — Landing de pré-venda:</strong> página com capa rascunhada + promessa + botão "avise-me". 100 sign-ups em 1 semana = vai.</li>
+          <li><strong>Teste 3 — Pré-venda real:</strong> oferta de R$ 19 pela versão beta (PDF). 5 vendas reais = demanda comprovada.</li>
+        </ul>
+      </div>
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Sinal de morte</h3>
+        <p class="text-neutral-300">Se nenhum dos 3 testes deu sinal, a ideia não tem demanda. NÃO escreva por teimosia ("vou educar o mercado"). Volte ao Prompt 1.</p>
+      </div>
+    </section>
+
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🎲 Decisão final e ritual de commit</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Hora de matar 4 e abraçar 1. <strong class="text-emerald-400">Indecisão é o assassino silencioso</strong> — sem commit explícito, você volta a comparar ideias no capítulo 4 e perde 2 semanas.</p>
+      <div class="bg-gradient-to-br from-primary/20 to-dark-800 rounded-xl border border-primary/40 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🔥</span> Ritual de commit em 3 passos</h3>
+        <ol class="space-y-3 text-neutral-300">
+          <li><strong>1.</strong> Em <code class="text-primary">ideas.md</code>, marca a vencedora com ✓ e escreve em 3 linhas: <em>"Escolhi essa porque ____. As outras 4 voltam pra fila em ____ (data)."</em></li>
+          <li><strong>2.</strong> Faz commit no git: <code class="text-primary">git commit -am "decision: livro [título]"</code></li>
+          <li><strong>3.</strong> Posta publicamente: "Vou lançar [título] em 30 dias. Data: ___". Accountability público fecha porta de saída.</li>
+        </ol>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">📊</span> Por que funciona</h3>
+        <p class="text-neutral-300 mb-2">Estudos do Dr. Robert Cialdini ("Influence") mostram que compromisso público aumenta probabilidade de execução em 65%.</p>
+        <p class="text-neutral-400 text-sm italic">Esse é o motivo de Alcoólicos Anônimos pedir testemunho público — não é ritual, é mecânica psicológica.</p>
+      </div>
+    </section>
+
+    <section class="mb-12"><div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✓</span> Resumo do módulo</h2>
+      <div class="space-y-4 mb-8">
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Inventário primeiro</strong><span class="text-neutral-400"> — talent stack &gt; talento único</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Prompt 1 em arquivo</strong><span class="text-neutral-400"> — ideas.md vira input persistente</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">5 filtros, 0 piedade</strong><span class="text-neutral-400"> — ideia falha em 2+ = morre</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Gap em reviews 1-3 estrelas</strong><span class="text-neutral-400"> — ouro do positioning</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Valida em 24h</strong><span class="text-neutral-400"> — pesquisa, landing, pré-venda</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Ritual de commit</strong><span class="text-neutral-400"> — público, escrito, datado</span></div></div>
+      </div>
+      <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">1.3 — 📖 Bíblia do livro</p></div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha</a>
+        <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a>
+      </div>
+    </div></section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 text-center text-neutral-500 text-sm"><p>mkbook · Módulo 1.2</p></div></footer>
+  <script>
+    const tt = document.getElementById('theme-toggle'); const dI = document.getElementById('theme-toggle-dark-icon'); const lI = document.getElementById('theme-toggle-light-icon'); const h = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !h.classList.contains('dark'))) { dI.classList.remove('hidden'); h.classList.remove('dark'); } else { lI.classList.remove('hidden'); }
+    tt.addEventListener('click', () => { dI.classList.toggle('hidden'); lI.classList.toggle('hidden'); h.classList.toggle('dark'); localStorage.setItem('theme', h.classList.contains('dark') ? 'dark' : 'light'); });
+  </script>
+</body>
+</html>

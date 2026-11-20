@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.3 — Bíblia do livro | mkbook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; } html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; } html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); } html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; } html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); } html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(239,68,68,0.08); } html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .text-red-400 { color: #b91c1c; } html:not(.dark) .text-blue-400 { color: #2563eb; }
+    .dark .border-dark-600 { border-color: #374151; } .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">📚</span><span class="font-bold text-lg hidden sm:inline">mkbook</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div><div class="flex items-center space-x-1 sm:space-x-2"><a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a><a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Escrita</span></a><a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Publicação</span></a><a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Lançamento</span></a><button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg></button></div></div></div></nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span><a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span><span class="text-emerald-400">Módulo 1.3</span></div></nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📖 Bíblia do livro</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">O documento mais importante do projeto. Avatar, voz, promessa, glossário e linhas vermelhas viram lei para todos os agentes da pipeline.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">👤 Avatar do leitor — 1 pessoa, não "público"</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Escrever pra <strong class="text-emerald-400">"todo mundo"</strong> gera texto genérico. Escrever pra <strong class="text-emerald-400">Maria, 38 anos, gerente de produto na Globo, ansiosa porque acabou de virar mãe e perdeu controle sobre a carreira</strong> gera voz específica que vende.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">🎯 Template de avatar</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li><strong>Nome:</strong> (use 1 pessoa real ou Frankenstein de 3)</li>
+          <li><strong>Idade + profissão:</strong> 38, gerente de produto</li>
+          <li><strong>Situação de vida AGORA:</strong> primeiro filho, casamento de 5 anos, em transição</li>
+          <li><strong>Dor que tira o sono:</strong> "não vou conseguir voltar pro nível antigo da carreira"</li>
+          <li><strong>Desejo escondido:</strong> ser referência sem perder presença em casa</li>
+          <li><strong>O que ela TENTOU e falhou:</strong> 3 cursos, 2 livros, 1 mentoria — todos genéricos demais</li>
+          <li><strong>Nível de conhecimento:</strong> sabe os termos, falta sistema</li>
+        </ul>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Truque do "alguém da vida real"</h3>
+        <p class="text-neutral-300">Pega 1 cliente que você ajudou e adorou. Usa <strong>ela</strong> como avatar. Quando travar no capítulo 5, pergunta: "essa frase faz sentido pra Maria?". Nunca mais escreve genérico.</p>
+      </div>
+    </section>
+
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🗣️ Voz e tom — 3 mil palavras suas viram modelo</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Aqui mora a diferença entre <strong class="text-emerald-400">"esse cara escreveu"</strong> e <strong class="text-emerald-400">"isso parece LLM padrão"</strong>. Sem amostras de voz cruas, agente vai gerar prosa polida-genérica.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Boas amostras</h4><ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>E-mails longos pra clientes/equipe</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Threads do LinkedIn/Twitter (não posts curtos)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Mensagens longas do WhatsApp explicando algo</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Newsletter que você escreveu sem editor</span></li>
+        </ul></div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Amostras ruins</h4><ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Posts curtos editados (já passaram por filtro)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Textos formais corporativos</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Slides (não tem prosa real)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Trechos de outros livros que você admira</span></li>
+        </ul></div>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Quantidade certa</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li><strong>Mínimo:</strong> 2.000 palavras suas reais (1 e-mail longo + 2 threads)</li>
+          <li><strong>Ideal:</strong> 5.000 palavras (newsletter de 6 meses)</li>
+          <li><strong>Máximo útil:</strong> 10.000 — além disso não melhora</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">💎 Promessa em 1 frase</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A promessa é o <strong class="text-emerald-400">north star</strong> do livro. Toda decisão difícil (cortar capítulo? adicionar exemplo? mudar título?) é resolvida apontando pra ela.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Fórmula da promessa</h3>
+        <div class="font-mono text-sm bg-dark-900/50 p-4 rounded border border-emerald-500/30 text-neutral-300 mb-3">
+          "Ao terminar este livro, [avatar] terá [transformação concreta] mesmo [objeção comum]."
+        </div>
+        <p class="text-neutral-300 mb-2"><strong>Exemplo:</strong></p>
+        <p class="text-neutral-400 italic">"Ao terminar este livro, gerentes de produto sobrecarregados terão um sistema reproduzível pra escrever e publicar seu primeiro livro em 30 dias, mesmo escrevendo só 1 hora por dia."</p>
+      </div>
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Promessa fraca</h3>
+        <p class="text-neutral-300">"Você vai aprender sobre escrita de livros" = ruim. Sem avatar, sem transformação, sem objeção. Não diferencia, não convence, não vende.</p>
+      </div>
+    </section>
+
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">📕 Glossário controlado</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Sem glossário, "agente de IA" vira "AI agent" no cap 7, "bot" no cap 9, "assistente" no cap 11. <strong class="text-emerald-400">Leitor estranha</strong> sem saber por quê.</p>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📋</span> Formato da entrada de glossário</h3>
+        <div class="overflow-x-auto"><table class="w-full text-sm text-neutral-300">
+          <thead><tr class="border-b border-dark-600"><th class="text-left py-2 pr-4 text-emerald-400">Termo oficial</th><th class="text-left py-2 pr-4 text-emerald-400">Definição curta</th><th class="text-left py-2 text-emerald-400">Variações proibidas</th></tr></thead>
+          <tbody>
+            <tr class="border-b border-dark-700"><td class="py-2 pr-4"><strong>agente de IA</strong></td><td class="py-2 pr-4">programa que executa tarefas via LLM</td><td class="py-2">AI agent, bot, assistente</td></tr>
+            <tr class="border-b border-dark-700"><td class="py-2 pr-4"><strong>pipeline</strong></td><td class="py-2 pr-4">sequência de scripts encadeados</td><td class="py-2">fluxo, workflow, automação</td></tr>
+            <tr><td class="py-2 pr-4"><strong>bíblia</strong></td><td class="py-2 pr-4">documento fonte de verdade do livro</td><td class="py-2">manual, guia, doc, briefing</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica: 5-10 termos só</h3>
+        <p class="text-neutral-300">Glossário enorme vira ruído. Liste apenas termos <strong>centrais</strong> e <strong>recorrentes</strong>. Resto, qualquer sinônimo serve.</p>
+      </div>
+    </section>
+
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🚫 Linhas vermelhas</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O que o livro <strong class="text-emerald-400">nunca</strong> faz. Sem isso, agente escorrega pra dark patterns de copywriting e você reescreve muito.</p>
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-4">Exemplos comuns de linhas vermelhas</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Promessas de "ficar rico rápido" ou "fórmula mágica"</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Citar política partidária ou religião</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Estatísticas sem fonte verificável</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Linguagem que humilha o leitor ("você está fazendo errado faz anos")</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Histórias inventadas apresentadas como reais</span></li>
+          <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Comparações pejorativas com concorrentes nominais</span></li>
+        </ul>
+      </div>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">📊</span> Por que importa</h3>
+        <p class="text-neutral-300">Livros com linhas vermelhas viradas geram <strong>reviews 1-estrela específicas</strong> ("achei o autor arrogante"). Essas reviews afundam BSR mais que reviews ruins genéricas.</p>
+      </div>
+    </section>
+
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">💼 Modelo de back-end</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Definir <strong class="text-emerald-400">já na bíblia</strong> o que vem atrás do livro (curso, mentoria, SaaS) muda o que cada capítulo entrega. Você cria <strong>buracos intencionais</strong> que o produto pago resolve.</p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Escolha o produto-mãe</h4><p class="text-neutral-300 text-sm">Curso (R$ 997-2997), mentoria (R$ 5-15k), workshop corporativo (R$ 30k+) ou SaaS recorrente.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Mapeie o gap</h4><p class="text-neutral-300 text-sm">O que o livro vai ENSINAR mas não vai DAR PRONTO? (templates? feedback? aplicação ao seu caso?) Isso é o produto pago.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Plante âncoras no texto</h4><p class="text-neutral-300 text-sm">CTAs sutis em 4-5 lugares do livro pra esse produto: "se quiser que eu olhe o seu caso, [link]".</p></div></div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Cuidado com excesso</h3>
+        <p class="text-neutral-300">CTA demais vira panfleto e mata credibilidade. Regra: <strong>1 CTA a cada 3 capítulos</strong>. Mais que isso, leitor sente que comprou comercial disfarçado de livro.</p>
+      </div>
+    </section>
+
+    <section class="mb-12"><div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+      <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✓</span> Resumo do módulo</h2>
+      <div class="space-y-4 mb-8">
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">1 avatar concreto</strong><span class="text-neutral-400"> — pessoa real, não persona genérica</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">2-5 mil palavras suas</strong><span class="text-neutral-400"> — voz vira modelo, sai prosa autêntica</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Promessa em 1 frase</strong><span class="text-neutral-400"> — avatar + transformação + objeção</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">5-10 termos no glossário</strong><span class="text-neutral-400"> — consistência cruzada garantida</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Linhas vermelhas escritas</strong><span class="text-neutral-400"> — agente respeita ética da marca</span></div></div>
+        <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Back-end planejado</strong><span class="text-neutral-400"> — livro vira porta, não fim</span></div></div>
+      </div>
+      <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">1.4 — 🗺️ Outline estratégico</p></div>
+      <div class="flex flex-col sm:flex-row gap-4"><a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha</a><a href="modulo-1-4.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a></div>
+    </div></section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 text-center text-neutral-500 text-sm"><p>mkbook · Módulo 1.3</p></div></footer>
+  <script>const tt = document.getElementById('theme-toggle'); const dI = document.getElementById('theme-toggle-dark-icon'); const lI = document.getElementById('theme-toggle-light-icon'); const h = document.documentElement; if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !h.classList.contains('dark'))) { dI.classList.remove('hidden'); h.classList.remove('dark'); } else { lI.classList.remove('hidden'); } tt.addEventListener('click', () => { dI.classList.toggle('hidden'); lI.classList.toggle('hidden'); h.classList.toggle('dark'); localStorage.setItem('theme', h.classList.contains('dark') ? 'dark' : 'light'); });</script>
+</body>
+</html>

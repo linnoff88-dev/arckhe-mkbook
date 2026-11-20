@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup guiado — Gere sua bíblia | mkbook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+    }}}}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+
+    input, textarea { background-color: rgb(31 41 55); color: rgb(229 231 235); border: 1px solid rgb(75 85 99); border-radius: 8px; padding: 10px 14px; width: 100%; font-family: inherit; font-size: 14px; }
+    input:focus, textarea:focus { outline: none; border-color: #FACC15; }
+    textarea { min-height: 100px; resize: vertical; }
+    html:not(.dark) input, html:not(.dark) textarea { background-color: #ffffff; color: #111827; border-color: #d1d5db; }
+    label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: rgb(229 231 235); }
+    html:not(.dark) label { color: #111827; }
+    .hint { font-size: 12px; color: rgb(156 163 175); margin-bottom: 8px; }
+    html:not(.dark) .hint { color: #6b7280; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .progress-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+    .progress-dot.done { background-color: rgba(5,150,105,0.2); color: #34d399; }
+    .progress-dot.active { background-color: #FACC15; color: #111827; }
+    .progress-dot.pending { background-color: #374151; color: #6b7280; }
+    html:not(.dark) .progress-dot.pending { background-color: #e5e7eb; color: #9ca3af; }
+    .progress-line { flex: 1; height: 2px; background-color: #374151; }
+    .progress-line.done { background-color: #34d399; }
+    html:not(.dark) .progress-line { background-color: #e5e7eb; }
+    pre code { background: transparent !important; padding: 0 !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">📚</span>
+            <span class="font-bold text-lg hidden sm:inline">mkbook</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <a href="../index.html" class="text-sm text-neutral-400 hover:text-yellow-400">← voltar</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-primary/10 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 border border-primary/40">SETUP GUIADO</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-3">🧬 Monte sua bíblia em 10 minutos</h1>
+      <p class="text-neutral-400 max-w-2xl mx-auto">Responda 12 perguntas e baixe seu <code class="text-primary">bible.md</code> pronto pra colocar no projeto mkbook.</p>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- PROGRESS -->
+    <div class="flex items-center mb-8 px-4">
+      <div class="progress-dot active" id="p1">1</div>
+      <div class="progress-line" id="l1"></div>
+      <div class="progress-dot pending" id="p2">2</div>
+      <div class="progress-line" id="l2"></div>
+      <div class="progress-dot pending" id="p3">3</div>
+      <div class="progress-line" id="l3"></div>
+      <div class="progress-dot pending" id="p4">4</div>
+      <div class="progress-line" id="l4"></div>
+      <div class="progress-dot pending" id="p5">✓</div>
+    </div>
+
+    <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 sm:p-8">
+
+      <!-- STEP 1 — IDENTIDADE -->
+      <div class="step active" data-step="1">
+        <h2 class="text-2xl font-bold mb-2">1. Identidade do livro</h2>
+        <p class="hint mb-6">Comece pelo básico. Pode mudar depois — nada aqui é definitivo.</p>
+
+        <div class="mb-5">
+          <label>Título de trabalho</label>
+          <input type="text" id="title" placeholder="Meu Livro Sobre X">
+        </div>
+        <div class="mb-5">
+          <label>Subtítulo</label>
+          <input type="text" id="subtitle" placeholder="Como fazer Y mesmo sendo Z">
+        </div>
+        <div class="mb-5">
+          <label>Gênero/categoria</label>
+          <input type="text" id="genre" placeholder="business, self-help, técnico, memoir..." value="business">
+        </div>
+        <div class="mb-5">
+          <label>Palavras-chave (separadas por vírgula)</label>
+          <input type="text" id="keywords" placeholder="produtividade, IA, escrita, carreira">
+        </div>
+      </div>
+
+      <!-- STEP 2 — PROMESSA -->
+      <div class="step" data-step="2">
+        <h2 class="text-2xl font-bold mb-2">2. Promessa central</h2>
+        <p class="hint mb-6">Uma frase que define tudo. Toda decisão difícil no livro será resolvida apontando pra essa frase.</p>
+
+        <div class="mb-5">
+          <label>Promessa em 1 frase</label>
+          <p class="hint">Fórmula: "Ao terminar, [avatar] terá [transformação concreta] mesmo [objeção comum]."</p>
+          <textarea id="promise" placeholder="Ao terminar este livro, gerentes de produto sobrecarregados terão um sistema reproduzível pra escrever e publicar seu primeiro livro em 30 dias, mesmo escrevendo só 1 hora por dia."></textarea>
+        </div>
+      </div>
+
+      <!-- STEP 3 — AVATAR -->
+      <div class="step" data-step="3">
+        <h2 class="text-2xl font-bold mb-2">3. Avatar do leitor</h2>
+        <p class="hint mb-6">1 pessoa real (cliente, amigo, você-no-passado). Não "público em geral". Quanto mais específico, melhor.</p>
+
+        <div class="mb-5">
+          <label>Nome do avatar</label>
+          <input type="text" id="av_name" placeholder="Maria">
+        </div>
+        <div class="mb-5">
+          <label>Idade + profissão</label>
+          <input type="text" id="av_age" placeholder="38, gerente de produto na Globo">
+        </div>
+        <div class="mb-5">
+          <label>Dor principal (o que tira o sono)</label>
+          <textarea id="av_pain" placeholder="Acabou de virar mãe e tem medo de perder anos de carreira durante a licença"></textarea>
+        </div>
+        <div class="mb-5">
+          <label>Desejo principal</label>
+          <textarea id="av_desire" placeholder="Voltar posicionada como sênior, não como júnior reciclada"></textarea>
+        </div>
+        <div class="mb-5">
+          <label>Onde está hoje (nível de conhecimento)</label>
+          <input type="text" id="av_now" placeholder="Sabe os termos, falta sistema">
+        </div>
+        <div class="mb-5">
+          <label>Onde quer chegar (estado final)</label>
+          <input type="text" id="av_then" placeholder="Volta da licença sem perder ranking interno">
+        </div>
+      </div>
+
+      <!-- STEP 4 — VOZ -->
+      <div class="step" data-step="4">
+        <h2 class="text-2xl font-bold mb-2">4. Voz, regras e amostras</h2>
+        <p class="hint mb-6">O passo mais importante. Sem amostras suas reais, o livro vai soar genérico.</p>
+
+        <div class="mb-5">
+          <label>3 adjetivos do tom</label>
+          <input type="text" id="tone" placeholder="direta, irmã mais velha, sem condescendência">
+        </div>
+        <div class="mb-5">
+          <label>Autor de referência (voz que admira)</label>
+          <input type="text" id="ref_author" placeholder="Cal Newport, Susan Cain, Tim Ferriss...">
+        </div>
+        <div class="mb-5">
+          <label>Modelo de back-end</label>
+          <p class="hint">O que o livro vai vender? Curso? Mentoria? Palestras?</p>
+          <input type="text" id="backend" placeholder="Mentoria de 3 meses (R$ 4.997)">
+        </div>
+        <div class="mb-5">
+          <label>Linhas vermelhas (o que o livro NUNCA faz)</label>
+          <p class="hint">1 por linha. Ex: "não promete dinheiro rápido", "não cita política".</p>
+          <textarea id="red_lines" placeholder="não promete fórmula mágica&#10;não vilaniza empresas&#10;não cita política partidária"></textarea>
+        </div>
+        <div class="mb-5">
+          <label>🔥 Amostras de voz (2-5 mil palavras suas reais)</label>
+          <p class="hint">Cole 2-3 e-mails longos seus, threads de LinkedIn, ou newsletters antigas. SEM ISSO o livro sai LLM-genérico.</p>
+          <textarea id="voice_samples" placeholder="Cole aqui qualquer texto que você escreveu de verdade, no seu estilo natural..." style="min-height: 250px;"></textarea>
+          <p class="hint mt-2" id="word_count">0 palavras (alvo: 2.000+)</p>
+        </div>
+      </div>
+
+      <!-- STEP 5 — RESULTADO -->
+      <div class="step" data-step="5">
+        <h2 class="text-2xl font-bold mb-2">✅ Sua bíblia tá pronta</h2>
+        <p class="hint mb-6">Baixe o arquivo e coloque na raiz do projeto mkbook.</p>
+
+        <div class="bg-dark-700 rounded-lg p-4 mb-6 max-h-96 overflow-auto">
+          <pre class="text-xs text-neutral-300 whitespace-pre-wrap" id="preview"></pre>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+          <button onclick="downloadBible()" class="flex-1 px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">
+            ⬇  Baixar bible.md
+          </button>
+          <button onclick="copyBible()" class="flex-1 px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+            📋 Copiar conteúdo
+          </button>
+        </div>
+
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-5">
+          <h3 class="font-bold text-emerald-400 mb-3">Próximos passos no terminal:</h3>
+          <pre class="text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto"><code>cd ~/projetos/mkbook
+mv ~/Downloads/bible.md .          # arquivo baixado vai pra raiz
+$EDITOR stories.md                  # cole histórias suas reais
+claude
+> /ebook-writer monte outline a partir do bible.md
+exit
+./scripts/write-chapter.sh 1</code></pre>
+        </div>
+      </div>
+
+      <!-- NAV BUTTONS -->
+      <div class="flex justify-between mt-8 pt-6 border-t border-dark-600" id="nav-buttons">
+        <button id="prev-btn" onclick="prevStep()" class="px-6 py-2.5 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors disabled:opacity-30" disabled>
+          ← Voltar
+        </button>
+        <button id="next-btn" onclick="nextStep()" class="px-6 py-2.5 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+          Próximo →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- EXPLICAÇÃO ABAIXO -->
+    <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
+      <h3 class="font-bold mb-3 text-yellow-400">💡 Prefere fazer no terminal?</h3>
+      <p class="text-sm text-neutral-400 mb-3">Tem versão CLI interativa com as mesmas perguntas:</p>
+      <pre class="text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto"><code>./scripts/setup.sh</code></pre>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-neutral-500 text-sm">
+      <p>mkbook setup · <a href="../index.html" class="text-sky-400">Voltar ao curso</a></p>
+    </div>
+  </footer>
+
+  <script>
+    let step = 1;
+    const TOTAL = 5;
+
+    function updateProgress() {
+      for (let i = 1; i <= 5; i++) {
+        const dot = document.getElementById('p' + i);
+        const line = document.getElementById('l' + i);
+        dot.className = 'progress-dot ' + (i < step ? 'done' : i === step ? 'active' : 'pending');
+        if (line) line.className = 'progress-line' + (i < step ? ' done' : '');
+      }
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.querySelector(`[data-step="${step}"]`).classList.add('active');
+      document.getElementById('prev-btn').disabled = (step === 1);
+      document.getElementById('next-btn').textContent = (step === 4 ? 'Gerar bíblia →' : step === 5 ? 'Recomeçar' : 'Próximo →');
+    }
+
+    function nextStep() {
+      if (step === 5) { if (confirm('Recomeçar? Você perderá os dados preenchidos.')) location.reload(); return; }
+      if (step === 4) generatePreview();
+      if (step < TOTAL) { step++; updateProgress(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+    }
+    function prevStep() {
+      if (step > 1) { step--; updateProgress(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+    }
+
+    function v(id) { return (document.getElementById(id).value || '').trim(); }
+
+    function generatePreview() {
+      const today = new Date().toISOString().slice(0,10);
+      const md = `# Bíblia do Livro
+
+> Gerada via setup web em ${today}.
+> Este é o documento mais importante do projeto. Toda decisão de escrita parte daqui.
+
+---
+
+## 1. Identidade
+
+- **Título de trabalho:** ${v('title') || '(preencha)'}
+- **Subtítulo:** ${v('subtitle')}
+- **Gênero/Categoria:** ${v('genre')}
+- **Palavras-chave:** ${v('keywords')}
+
+## 2. Promessa Central
+
+> ${v('promise') || '(preencha)'}
+
+## 3. Público-alvo (Avatar)
+
+- **Nome:** ${v('av_name')}
+- **Idade + profissão:** ${v('av_age')}
+- **Dor principal:** ${v('av_pain')}
+- **Desejo principal:** ${v('av_desire')}
+- **Onde está hoje:** ${v('av_now')}
+- **Onde quer chegar:** ${v('av_then')}
+
+## 4. Voz e Tom
+
+- **3 adjetivos:** ${v('tone')}
+- **Autor de referência:** ${v('ref_author')}
+- **Modelo de back-end:** ${v('backend')}
+
+### Amostras de voz própria (CRÍTICO)
+
+\`\`\`
+${v('voice_samples') || '(cole 2-5 mil palavras suas reais aqui — sem isso o livro sai genérico)'}
+\`\`\`
+
+## 5. Glossário Controlado
+
+| Termo | Definição curta | Variações proibidas |
+|---|---|---|
+| (preencha 5-10 termos) | | |
+
+## 6. Linhas Vermelhas
+
+${v('red_lines') || '(o que o livro NUNCA faz)'}
+
+## 7. Estrutura por Capítulo
+
+> Preencha após gerar outline.md com \`/ebook-writer monte outline a partir do bible.md\`.
+
+| Cap | Promessa específica | Transformação |
+|---|---|---|
+| 1 | | |
+| 2 | | |
+`;
+      document.getElementById('preview').textContent = md;
+      return md;
+    }
+
+    function downloadBible() {
+      const md = generatePreview();
+      const blob = new Blob([md], {type: 'text/markdown'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'bible.md';
+      a.click();
+    }
+
+    function copyBible() {
+      navigator.clipboard.writeText(generatePreview()).then(() => {
+        alert('Copiado! Cole no arquivo bible.md do seu projeto mkbook.');
+      });
+    }
+
+    // Word counter pra amostras de voz
+    document.getElementById('voice_samples').addEventListener('input', e => {
+      const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+      const target = 2000;
+      const wc = document.getElementById('word_count');
+      const color = words >= target ? 'color: #34d399' : words >= 500 ? 'color: #FACC15' : 'color: #9ca3af';
+      wc.style.cssText = color;
+      wc.textContent = `${words.toLocaleString('pt-BR')} palavras (alvo: 2.000+)${words >= target ? ' ✓' : ''}`;
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
