@@ -14,7 +14,7 @@ C_ASK='\033[1;36m'    # ciano
 C_END='\033[0m'
 
 ask() {
-  # ask "Pergunta" "valor_padrão" → ecoa resposta no stdout
+  # ask "Pergunta" "valor_padrêo" → ecoa resposta no stdout
   local q="$1" default="${2:-}" ans
   if [[ -n "$default" ]]; then
     echo -e "${C_ASK}❯${C_END} $q ${C_DIM}[$default]${C_END}" >&2
@@ -74,14 +74,14 @@ KEYWORDS=$(ask "Palavras-chave (separadas por vírgula)")
 echo ""
 echo -e "${C_TITLE}━━━ 2/4  Promessa central ━━━${C_END}"
 echo "Em 1 frase: o que o leitor vai ter ao terminar o livro?"
-echo -e "${C_DIM}Fórmula: 'Ao terminar, [avatar] terá [transformação] mesmo [objeção].'${C_END}"
+echo -e "${C_DIM}Fórmula: 'Ao terminar, [avatar] terá [transformaçêo] mesmo [objeçêo].'${C_END}"
 PROMISE=$(ask "Promessa")
 
 # -------- AVATAR --------
 echo ""
 echo -e "${C_TITLE}━━━ 3/4  Avatar do leitor (1 pessoa real) ━━━${C_END}"
 AV_NAME=$(ask "Nome do avatar (real ou fictício)")
-AV_AGE=$(ask "Idade + profissão")
+AV_AGE=$(ask "Idade + profissêo")
 AV_PAIN=$(ask "Dor principal (o que tira o sono)")
 AV_DESIRE=$(ask "Desejo principal (o que ela quer ter/ser/sentir)")
 AV_NOW=$(ask "Onde está hoje (nível de conhecimento)")
@@ -106,7 +106,7 @@ cat > "$BIBLE" <<EOF
 # Bíblia do Livro
 
 > Gerada via \`./scripts/setup.sh\` em $(date +%Y-%m-%d).
-> Este é o documento mais importante do projeto. Toda decisão de escrita parte daqui.
+> Este é o documento mais importante do projeto. Toda decisêo de escrita parte daqui.
 
 ---
 
@@ -124,7 +124,7 @@ cat > "$BIBLE" <<EOF
 ## 3. Público-alvo (Avatar)
 
 - **Nome:** $AV_NAME
-- **Idade + profissão:** $AV_AGE
+- **Idade + profissêo:** $AV_AGE
 - **Dor principal:** $AV_PAIN
 - **Desejo principal:** $AV_DESIRE
 - **Onde está hoje:** $AV_NOW
@@ -144,7 +144,7 @@ $VOICE_SAMPLES
 
 ## 5. Glossário Controlado
 
-| Termo | Definição curta | Variações proibidas |
+| Termo | Definiçêo curta | Variações proibidas |
 |---|---|---|
 | (preencha) | | |
 
@@ -156,7 +156,7 @@ $RED_LINES
 
 > Preencha após gerar outline.md com \`/ebook-writer monte outline a partir do bible.md\`.
 
-| Cap | Promessa específica | Transformação |
+| Cap | Promessa específica | Transformaçêo |
 |---|---|---|
 | 1 | | |
 | 2 | | |
@@ -174,10 +174,10 @@ if [[ ! -f "$STORIES" ]] || [[ ! -s "$STORIES" ]]; then
 
 ```
 ### [Título curto]
-**Tags:** #capX #tema #emoção
+**Tags:** #capX #tema #emoçêo
 **Ano:**
 **O que aconteceu:**
-**Lição:**
+**Liçêo:**
 **Onde encaixa:**
 ```
 
@@ -186,7 +186,7 @@ if [[ ! -f "$STORIES" ]] || [[ ! -s "$STORIES" ]]; then
 EOF
 fi
 
-# -------- GIT INIT (se ainda não) --------
+# -------- GIT INIT (se ainda nêo) --------
 if [[ ! -d "$ROOT/.git" ]]; then
   ( cd "$ROOT" && git init -q && git add . && git commit -qm "init via setup.sh: $TITLE" 2>/dev/null || true )
 fi

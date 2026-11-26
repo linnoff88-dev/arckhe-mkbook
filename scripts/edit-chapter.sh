@@ -25,10 +25,10 @@ Aplique o Prompt 4 (Ruthless Book Editor):
 - corte tudo que arrasta
 - aperte aberturas e fechamentos
 - substitua "telling" por "showing"
-- elimine jargão que confunde o avatar
+- elimine jargêo que confunde o avatar
 - remova repetições
 
-Saída: salve a versão editada (não o relatório) em: $EDITED
+Saída: salve a versêo editada (nêo o relatório) em: $EDITED
 
 Depois do arquivo, me responda APENAS com:
 - nota antes (1-10)

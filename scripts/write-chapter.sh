@@ -27,7 +27,7 @@ echo ""
 
 # Invoca Claude Code com a skill. Pipeline:
 #   1. lê bible.md, outline.md, stories.md
-#   2. extrai a seção do Cap N do outline
+#   2. extrai a seçêo do Cap N do outline
 #   3. gera draft seguindo Prompt 3 do framework
 #   4. salva em chapters/NN-draft.md
 claude --no-interactive <<PROMPT
@@ -37,13 +37,13 @@ Tarefa: escreva o Capítulo $N do livro.
 
 Leia:
 - $ROOT/bible.md (voz, audiência, promessa, glossário)
-- $ROOT/outline.md (extraia a seção do Capítulo $N)
+- $ROOT/outline.md (extraia a seçêo do Capítulo $N)
 - $ROOT/stories.md (puxe histórias relevantes ao capítulo)
 
 Aplique o Prompt 3 (Chapter Writing Engine) com estas regras adicionais da bíblia:
 - mantenha a voz definida em "Voz e Tom"
 - respeite o glossário controlado
-- não viole as linhas vermelhas
+- nêo viole as linhas vermelhas
 - inclua pelo menos 1 história real puxada de stories.md
 - ao final, deixe um gancho-cliffhanger pro Cap $((N+1))
 

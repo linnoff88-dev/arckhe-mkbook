@@ -8,7 +8,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 echo "📚 Inicializando livro: $TITLE"
 echo "📁 Em: $ROOT"
 
-# Copia templates pra raiz (não sobrescreve)
+# Copia templates pra raiz (nêo sobrescreve)
 for f in bible.md outline.md stories.md; do
   if [[ -f "$ROOT/$f" ]]; then
     echo "  ⚠  $f já existe, pulando"
@@ -18,7 +18,7 @@ for f in bible.md outline.md stories.md; do
   fi
 done
 
-# Inicializa git se ainda não for repo
+# Inicializa git se ainda nêo for repo
 if [[ ! -d "$ROOT/.git" ]]; then
   ( cd "$ROOT" && git init -q && git add . && git commit -qm "init: $TITLE" )
   echo "  ✓ git init + primeiro commit"

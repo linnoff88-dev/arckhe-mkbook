@@ -125,35 +125,35 @@
       <!-- STEP 2 — PROMESSA -->
       <div class="step" data-step="2">
         <h2 class="text-2xl font-bold mb-2">2. Promessa central</h2>
-        <p class="hint mb-6">Uma frase que define tudo. Toda decisão difícil no livro será resolvida apontando pra essa frase.</p>
+        <p class="hint mb-6">Uma frase que define tudo. Toda decisêo difícil no livro será resolvida apontando pra essa frase.</p>
 
         <div class="mb-5">
           <label>Promessa em 1 frase</label>
-          <p class="hint">Fórmula: "Ao terminar, [avatar] terá [transformação concreta] mesmo [objeção comum]."</p>
-          <textarea id="promise" placeholder="Ao terminar este livro, gerentes de produto sobrecarregados terão um sistema reproduzível pra escrever e publicar seu primeiro livro em 30 dias, mesmo escrevendo só 1 hora por dia."></textarea>
+          <p class="hint">Fórmula: "Ao terminar, [avatar] terá [transformaçêo concreta] mesmo [objeçêo comum]."</p>
+          <textarea id="promise" placeholder="Ao terminar este livro, gerentes de produto sobrecarregados terêo um sistema reproduzível pra escrever e publicar seu primeiro livro em 30 dias, mesmo escrevendo só 1 hora por dia."></textarea>
         </div>
       </div>
 
       <!-- STEP 3 — AVATAR -->
       <div class="step" data-step="3">
         <h2 class="text-2xl font-bold mb-2">3. Avatar do leitor</h2>
-        <p class="hint mb-6">1 pessoa real (cliente, amigo, você-no-passado). Não "público em geral". Quanto mais específico, melhor.</p>
+        <p class="hint mb-6">1 pessoa real (cliente, amigo, você-no-passado). Nêo "público em geral". Quanto mais específico, melhor.</p>
 
         <div class="mb-5">
           <label>Nome do avatar</label>
           <input type="text" id="av_name" placeholder="Maria">
         </div>
         <div class="mb-5">
-          <label>Idade + profissão</label>
+          <label>Idade + profissêo</label>
           <input type="text" id="av_age" placeholder="38, gerente de produto na Globo">
         </div>
         <div class="mb-5">
           <label>Dor principal (o que tira o sono)</label>
-          <textarea id="av_pain" placeholder="Acabou de virar mãe e tem medo de perder anos de carreira durante a licença"></textarea>
+          <textarea id="av_pain" placeholder="Acabou de virar mêe e tem medo de perder anos de carreira durante a licença"></textarea>
         </div>
         <div class="mb-5">
           <label>Desejo principal</label>
-          <textarea id="av_desire" placeholder="Voltar posicionada como sênior, não como júnior reciclada"></textarea>
+          <textarea id="av_desire" placeholder="Voltar posicionada como sênior, nêo como júnior reciclada"></textarea>
         </div>
         <div class="mb-5">
           <label>Onde está hoje (nível de conhecimento)</label>
@@ -172,7 +172,7 @@
 
         <div class="mb-5">
           <label>3 adjetivos do tom</label>
-          <input type="text" id="tone" placeholder="direta, irmã mais velha, sem condescendência">
+          <input type="text" id="tone" placeholder="direta, irmê mais velha, sem condescendência">
         </div>
         <div class="mb-5">
           <label>Autor de referência (voz que admira)</label>
@@ -185,8 +185,8 @@
         </div>
         <div class="mb-5">
           <label>Linhas vermelhas (o que o livro NUNCA faz)</label>
-          <p class="hint">1 por linha. Ex: "não promete dinheiro rápido", "não cita política".</p>
-          <textarea id="red_lines" placeholder="não promete fórmula mágica&#10;não vilaniza empresas&#10;não cita política partidária"></textarea>
+          <p class="hint">1 por linha. Ex: "nêo promete dinheiro rápido", "nêo cita política".</p>
+          <textarea id="red_lines" placeholder="nêo promete fórmula mágica&#10;nêo vilaniza empresas&#10;nêo cita política partidária"></textarea>
         </div>
         <div class="mb-5">
           <label>🔥 Amostras de voz (2-5 mil palavras suas reais)</label>
@@ -238,10 +238,10 @@ exit
 
     </div>
 
-    <!-- EXPLICAÇÃO ABAIXO -->
+    <!-- EXPLICAÇêO ABAIXO -->
     <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
       <h3 class="font-bold mb-3 text-yellow-400">💡 Prefere fazer no terminal?</h3>
-      <p class="text-sm text-neutral-400 mb-3">Tem versão CLI interativa com as mesmas perguntas:</p>
+      <p class="text-sm text-neutral-400 mb-3">Tem versêo CLI interativa com as mesmas perguntas:</p>
       <pre class="text-xs text-neutral-300 bg-dark-900/50 rounded p-3 overflow-x-auto"><code>./scripts/setup.sh</code></pre>
     </div>
 
@@ -286,7 +286,7 @@ exit
       const md = `# Bíblia do Livro
 
 > Gerada via setup web em ${today}.
-> Este é o documento mais importante do projeto. Toda decisão de escrita parte daqui.
+> Este é o documento mais importante do projeto. Toda decisêo de escrita parte daqui.
 
 ---
 
@@ -304,7 +304,7 @@ exit
 ## 3. Público-alvo (Avatar)
 
 - **Nome:** ${v('av_name')}
-- **Idade + profissão:** ${v('av_age')}
+- **Idade + profissêo:** ${v('av_age')}
 - **Dor principal:** ${v('av_pain')}
 - **Desejo principal:** ${v('av_desire')}
 - **Onde está hoje:** ${v('av_now')}
@@ -324,7 +324,7 @@ ${v('voice_samples') || '(cole 2-5 mil palavras suas reais aqui — sem isso o l
 
 ## 5. Glossário Controlado
 
-| Termo | Definição curta | Variações proibidas |
+| Termo | Definiçêo curta | Variações proibidas |
 |---|---|---|
 | (preencha 5-10 termos) | | |
 
@@ -336,7 +336,7 @@ ${v('red_lines') || '(o que o livro NUNCA faz)'}
 
 > Preencha após gerar outline.md com \`/ebook-writer monte outline a partir do bible.md\`.
 
-| Cap | Promessa específica | Transformação |
+| Cap | Promessa específica | Transformaçêo |
 |---|---|---|
 | 1 | | |
 | 2 | | |

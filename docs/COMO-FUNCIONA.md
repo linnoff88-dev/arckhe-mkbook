@@ -6,9 +6,9 @@
 
 ## 1. Ideia central
 
-mkbook é uma **fábrica de livro** que separa o que **você faz** (decisões, voz, histórias reais) do que a **IA faz** (escrita estrutural, edição, consistência cruzada).
+mkbook é uma **fábrica de livro** que separa o que **você faz** (decisões, voz, histórias reais) do que a **IA faz** (escrita estrutural, ediçêo, consistência cruzada).
 
-**Diferença fundamental:** tudo mora em arquivos no disco e versionado no git — não em chat de IA.
+**Diferença fundamental:** tudo mora em arquivos no disco e versionado no git — nêo em chat de IA.
 
 ```
 SEUS INPUTS                    PIPELINE                       SAÍDA
@@ -44,7 +44,7 @@ Por baixo dos panos:
 1. Script abre Claude Code
 2. Claude lê os 3 arquivos
 3. Gera capítulo respeitando voz + outline + puxando 1 história
-4. Salva em `chapters/01-draft.md` (arquivo, não chat)
+4. Salva em `chapters/01-draft.md` (arquivo, nêo chat)
 
 Você abre, lê em 15 min, aprova.
 
@@ -52,7 +52,7 @@ Você abre, lê em 15 min, aprova.
 ./scripts/edit-chapter.sh 1
 ```
 
-Mesma coisa, mas Claude faz papel de **editor cruel** — corta gordura, conserta abertura, elimina jargão. Salva em `chapters/01-edited.md`.
+Mesma coisa, mas Claude faz papel de **editor cruel** — corta gordura, conserta abertura, elimina jargêo. Salva em `chapters/01-edited.md`.
 
 Repete pros 12 capítulos. 1 por dia.
 
@@ -64,13 +64,13 @@ Repete pros 12 capítulos. 1 por dia.
 
 Cola todos os capítulos editados, manda pro pandoc, gera EPUB + PDF + MOBI prontos pro KDP.
 
-### Etapa 4 — Publicação
+### Etapa 4 — Publicaçêo
 
-Trilha 3 do curso cobre: conta KDP, capa via IA, descrição, keywords, preço.
+Trilha 3 do curso cobre: conta KDP, capa via IA, descriçêo, keywords, preço.
 
 ---
 
-## 3. Por que "1 capítulo por dia" e não tudo de uma vez
+## 3. Por que "1 capítulo por dia" e nêo tudo de uma vez
 
 ### 6 razões técnicas + psicológicas
 
@@ -89,7 +89,7 @@ Trilha 3 do curso cobre: conta KDP, capa via IA, descrição, keywords, preço.
 
 **4. Revisar 12 caps de uma vez é brutal.**
 - 12 × 1.5h = 18h seguidas. Ninguém faz direito.
-- 1 por dia = atenção plena em cada um
+- 1 por dia = atençêo plena em cada um
 
 **5. Cliffhangers e continuidade pioram em batch.**
 - Cap 5 precisa REFERENCIAR cap 4 já fechado e PREPARAR cap 6
@@ -131,7 +131,7 @@ Trilha 3 do curso cobre: conta KDP, capa via IA, descrição, keywords, preço.
 | Voz inconsistente | Bíblia + amostras garantem voz |
 | Histórias repetidas entre capítulos | `stories.md` central evita |
 | Output: scroll de chat | Output: pasta `chapters/` versionada |
-| Edição: copia/cola tudo de novo | Edição: 1 script roda |
+| Ediçêo: copia/cola tudo de novo | Ediçêo: 1 script roda |
 | Vira EPUB? Você se vira | `build-epub.sh` resolve |
 
 ---
@@ -146,10 +146,10 @@ Trilha 3 do curso cobre: conta KDP, capa via IA, descrição, keywords, preço.
 | **4** | Ruthless Book Editor | `./scripts/edit-chapter.sh N` → `chapters/NN-edited.md` |
 | **5** | Launch Plan Domination | Trigger `/ebook-writer plano de lançamento` → `launch/plan.md` |
 | **6** | Publishing Pathway Advisor | Trigger `/ebook-writer pathway` → `publishing/path.md` |
-| **7** | Author Income Multiplier | Trigger `/ebook-writer monetização` → `monetization/streams.md` |
+| **7** | Author Income Multiplier | Trigger `/ebook-writer monetizaçêo` → `monetization/streams.md` |
 
-**Adicional (não no framework original):**
-- **4.5 — Consistency Check** — verificação cruzada de glossário, voz, repetição, promessas, cliffhangers, linhas vermelhas. Roda contra TODOS os capítulos. Sem isso, livro fica internamente incoerente.
+**Adicional (nêo no framework original):**
+- **4.5 — Consistency Check** — verificaçêo cruzada de glossário, voz, repetiçêo, promessas, cliffhangers, linhas vermelhas. Roda contra TODOS os capítulos. Sem isso, livro fica internamente incoerente.
 
 Tudo orquestrado pela skill `.claude/skills/ebook-writer/SKILL.md`.
 
@@ -176,19 +176,19 @@ Tudo orquestrado pela skill `.claude/skills/ebook-writer/SKILL.md`.
 
 ## 7. Exemplo concreto — livro fictício
 
-**Tema:** "Guia Definitivo de Carreira pra Mães Tech"
+**Tema:** "Guia Definitivo de Carreira pra Mêes Tech"
 
 **bible.md (resumo):**
 - Avatar: Maria, 38, gerente de produto na Globo, primeiro filho de 6 meses
 - Dor: "Vou perder anos de carreira e ninguém me prepara pra isso"
-- Promessa: "Volta posicionada como sênior, não júnior reciclada"
-- Voz: direta, irmã mais velha, sem condescendência
-- Linhas vermelhas: não vilanizar empresas, não politizar
+- Promessa: "Volta posicionada como sênior, nêo júnior reciclada"
+- Voz: direta, irmê mais velha, sem condescendência
+- Linhas vermelhas: nêo vilanizar empresas, nêo politizar
 - Back-end: mentoria de 3 meses (R$ 4.997)
 - + 3 mil palavras de e-mails da autora
 
 **outline.md (resumo):**
-- Cap 1: Por que a licença é oportunidade, não pausa
+- Cap 1: Por que a licença é oportunidade, nêo pausa
 - Cap 2: O que rolou na sua área enquanto você estava fora
 - Cap 3: Reentrada estratégica - os 30 primeiros dias
 - ...
@@ -202,7 +202,7 @@ Tags: #cap1 #medo
 
 ### A primeira vez que abri o Slack após 4 meses
 Tags: #cap3 #reentrada
-"...tinha 2.847 mensagens não lidas..."
+"...tinha 2.847 mensagens nêo lidas..."
 ```
 
 **Você roda:**
@@ -256,7 +256,7 @@ brew install --cask calibre
 1. **Testa o pipeline em 10 min** com bíblia fake:
    ```bash
    ./scripts/new-book.sh "Teste"
-   # preenche bible.md rapidão
+   # preenche bible.md rapidêo
    ./scripts/write-chapter.sh 1
    ./scripts/build-epub.sh
    ```
@@ -267,4 +267,4 @@ brew install --cask calibre
 ---
 
 **Data:** 2026-05-24
-**Versão do mkbook:** 1.0
+**Versêo do mkbook:** 1.0

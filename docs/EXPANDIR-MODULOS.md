@@ -4,9 +4,9 @@ O curso vem com **1 módulo canônico totalmente construído** (`curso/trilha1/m
 
 ## Por que assim
 
-Cada modulo HTML no formato INEMA.CLUB tem 500-800 linhas (6 seções ricas com componentes variados). 16 módulos × 700 linhas ≈ 11.000 linhas — inviável de gerar com qualidade em uma única sessão.
+Cada modulo HTML no formato INEMA.CLUB tem 500-800 linhas (6 seções ricas com componentes variados). 16 módulos × 700 linhas ≈ 11.000 linhas — inviável de gerar com qualidade em uma única sessêo.
 
-A página de trilha (`trilha*/index.html`) já é conteúdo completo e navegável. Os deep-dives são camada extra opcional.
+A página de trilha (`trilha*/index.html`) já é conteúdo completo e navegável. Os deep-dives sêo camada extra opcional.
 
 ## Como gerar os 15 restantes
 
@@ -16,11 +16,11 @@ Abra o repositório com Claude Code e rode:
 /formato-curso
 
 Use a skill formato-curso pra gerar o arquivo curso/trilha1/modulo-1-2.html
-no padrão INEMA.CLUB.
+no padrêo INEMA.CLUB.
 
 Use como referência canônica: curso/trilha1/modulo-1-1.html
 Conteúdo dos 6 tópicos: o que já está em curso/trilha1/index.html
-                        no card "modulo-1-2" (expandir cada tópico em seção
+                        no card "modulo-1-2" (expandir cada tópico em seçêo
                         de modulo com componentes variados — ver MASTER 1.8).
 
 Cor da trilha: emerald (T1).
@@ -35,8 +35,8 @@ Repita pra cada modulo-X-Y faltante, ajustando cor:
 Ou rode em loop:
 
 ```
-/loop 0 — gere os 15 módulos restantes do curso, um por iteração,
-seguindo o padrão de modulo-1-1.html e a cor da trilha correspondente.
+/loop 0 — gere os 15 módulos restantes do curso, um por iteraçêo,
+seguindo o padrêo de modulo-1-1.html e a cor da trilha correspondente.
 Pare quando todos existirem em disco.
 ```
 
@@ -51,7 +51,7 @@ A skill `formato-curso` já valida automaticamente, mas pra referência:
   - Círculo numerado grande (w-12 h-12)
   - Parágrafo introdutório com palavras-chave em `<strong>` da cor da trilha
   - Variedade de componentes (≥2 grids ✓/✗, ≥1 timeline, ≥2 tip boxes, ≥1 code box)
-- [ ] Seção de resumo com checklist + próximo modulo + CTAs
+- [ ] Seçêo de resumo com checklist + próximo modulo + CTAs
 - [ ] Light mode CSS completo (4 partes)
 - [ ] JavaScript de theme toggle
 - [ ] Bordas suaves no dark

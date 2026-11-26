@@ -8,7 +8,7 @@ MANUSCRIPT="$BUILD/manuscript.md"
 
 mkdir -p "$BUILD"
 
-command -v pandoc >/dev/null || { echo "❌ pandoc não encontrado. Instale: brew/apt install pandoc"; exit 1; }
+command -v pandoc >/dev/null || { echo "❌ pandoc nêo encontrado. Instale: brew/apt install pandoc"; exit 1; }
 
 EDITED=( "$ROOT"/chapters/*-edited.md )
 [[ ${#EDITED[@]} -gt 0 ]] || { echo "❌ Nenhum capítulo editado em chapters/"; exit 1; }
@@ -45,7 +45,7 @@ pandoc "$MANUSCRIPT" \
   --output "$BUILD/book.epub"
 echo "  ✓ book.epub"
 
-# PDF (precisa de LaTeX; falha silenciosamente se não tiver)
+# PDF (precisa de LaTeX; falha silenciosamente se nêo tiver)
 if command -v xelatex >/dev/null 2>&1; then
   pandoc "$MANUSCRIPT" \
     --pdf-engine=xelatex \
