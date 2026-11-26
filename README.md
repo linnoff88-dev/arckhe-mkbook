@@ -10,15 +10,15 @@
 
 Baseado no framework dos 7 prompts (Idea ê¢â â Outline ê¢â â Chapter ê¢â â Edit ê¢â â Launch ê¢â â Publishing ê¢â â Monetization), mas operando como **pipeline real de arquivos versionados** ê¢â¬â nêÂ£o prompts soltos no chat.
 
-ê°Å¸ÅÂ **Curso completo (GitHub Pages):** [inematds.github.io/mkbook](https://inematds.github.io/mkbook/)
-ê°Å¸ââ **RepositêÂ³rio:** [github.com/inematds/mkbook](https://github.com/inematds/mkbook)
+ê°Å¸ÅÂ **Curso completo (GitHub Pages):** [linnoff88-dev.github.io/arckhe-mkbook](https://linnoff88-dev.github.io/arckhe-/)
+ê°Å¸ââ **RepositêÂ³rio:** [github.com/linnoff88-dev/mkbook](https://github.com/linnoff88-dev/mkbook)
 
 ---
 
 ## ê¢Å¡Â¡ TL;DR ê¢â¬â 5 comandos pra ter um livro
 
 ```bash
-git clone https://github.com/inematds/mkbook.git && cd mkbook
+git clone https://github.com/linnoff88-dev/mkbook.git && cd mkbook
 ./scripts/setup.sh                         # ê°Å¸Â§Â¬ wizard interativo (preenche bêÂ­blia em 20 min)
 ./scripts/write-chapter.sh 1               # Claude gera cap 1
 ./scripts/edit-chapter.sh 1                # Claude edita
@@ -29,7 +29,7 @@ git clone https://github.com/inematds/mkbook.git && cd mkbook
 
 | Modo | Como rodar | Quando usar |
 |---|---|---|
-| **Web (visual)** | Acesse [inematds.github.io/mkbook/setup/](https://inematds.github.io/mkbook/setup/) ê¢â â preencha 12 perguntas ê¢â â baixe `bible.md` ê¢â â coloque na raiz do projeto | Quer ver progresso visual, prefere formulêÂ¡rio com previews |
+| **Web (visual)** | Acesse [linnoff88-dev.github.io/arckhe-/setup/](https://linnoff88-dev.github.io/arckhe-/setup/) ê¢â â preencha 12 perguntas ê¢â â baixe `bible.md` ê¢â â coloque na raiz do projeto | Quer ver progresso visual, prefere formulêÂ¡rio com previews |
 | **CLI (terminal)** | `./scripts/setup.sh` | JêÂ¡ têÂ¡ no terminal, prefere fluxo rêÂ¡pido sem trocar de janela |
 | **Manual** | `./scripts/new-book.sh "TêÂ­tulo"` + edita `bible.md` direto | JêÂ¡ fez antes, sabe o que quer preencher |
 
@@ -77,7 +77,7 @@ mkbook/
 ê¢ââ   ê¢âÅê¢ââ¬ê¢ââ¬ book.pdf
 ê¢ââ   ê¢ââê¢ââ¬ê¢ââ¬ book.mobi
 ê¢âÅê¢ââ¬ê¢ââ¬ .claude/skills/ebook-writer/  # Skill custom que orquestra os 7 prompts
-ê¢ââê¢ââ¬ê¢ââ¬ docs/                       # Curso GitHub Pages (formato INEMA.CLUB)
+ê¢ââê¢ââ¬ê¢ââ¬ docs/                       # Curso GitHub Pages (formato ARCKHÉ AI)
 ```
 
 ---
@@ -307,7 +307,7 @@ O treinamento completo em 4 trilhas (16 mêÂ³dulos êÂ· 96 têÂ³pico
 
 Deploy automêÂ¡tico via `.github/workflows/pages.yml`. ApêÂ³s push, vai pro ar em ~2 min.
 
-URL: **[inematds.github.io/mkbook](https://inematds.github.io/mkbook/)**
+URL: **[linnoff88-dev.github.io/arckhe-mkbook](https://linnoff88-dev.github.io/arckhe-/)**
 
 ---
 
@@ -319,7 +319,7 @@ MIT ê¢â¬â use, modifique, publique seu livro e fique com 100% da gran
 
 ## ê°Å¸â¢Â CrêÂ©ditos
 
-Framework dos 7 prompts originais: domêÂ­nio pêÂºblico (viralizou em 2024). ImplementaêÂ§êÂ£o como pipeline em arquivos versionados: [INEMA.CLUB](https://inema.club).
+Framework dos 7 prompts originais: domêÂ­nio pêÂºblico (viralizou em 2024). ImplementaêÂ§êÂ£o como pipeline em arquivos versionados: [ARCKHÉ AI](https://ARCKHÉ AI).
 
 ---
 

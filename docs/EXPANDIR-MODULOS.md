@@ -4,7 +4,7 @@ O curso vem com **1 módulo canônico totalmente construído** (`curso/trilha1/m
 
 ## Por que assim
 
-Cada modulo HTML no formato INEMA.CLUB tem 500-800 linhas (6 seções ricas com componentes variados). 16 módulos × 700 linhas ≈ 11.000 linhas — inviável de gerar com qualidade em uma única sessêo.
+Cada modulo HTML no formato ARCKHÉ AI tem 500-800 linhas (6 seções ricas com componentes variados). 16 módulos × 700 linhas ≈ 11.000 linhas — inviável de gerar com qualidade em uma única sessêo.
 
 A página de trilha (`trilha*/index.html`) já é conteúdo completo e navegável. Os deep-dives sêo camada extra opcional.
 
@@ -16,7 +16,7 @@ Abra o repositório com Claude Code e rode:
 /formato-curso
 
 Use a skill formato-curso pra gerar o arquivo curso/trilha1/modulo-1-2.html
-no padrêo INEMA.CLUB.
+no padrêo ARCKHÉ AI.
 
 Use como referência canônica: curso/trilha1/modulo-1-1.html
 Conteúdo dos 6 tópicos: o que já está em curso/trilha1/index.html
@@ -44,7 +44,7 @@ Pare quando todos existirem em disco.
 
 A skill `formato-curso` já valida automaticamente, mas pra referência:
 
-- [ ] Nav completo (4 trilhas + theme toggle + INEMA.CLUB)
+- [ ] Nav completo (4 trilhas + theme toggle + ARCKHÉ AI)
 - [ ] Breadcrumb
 - [ ] Header com gradiente da cor da trilha + stats grid
 - [ ] 6 seções (`<section id="topico-N">`) com:
